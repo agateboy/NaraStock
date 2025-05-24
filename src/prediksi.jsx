@@ -37,7 +37,7 @@ export default function Prediksi({ onBack }) {
         const period = `${selectedTimeframe}d`
 
         // Fetch candlestick data
-        fetch(`http://localhost:5000/api/forex?symbol=${symbol}&period=${period}`)
+        fetch(`flasknarastock-production.up.railway.app:5000/api/forex?symbol=${symbol}&period=${period}`)
             .then(res => res.json())
             .then(data => {
                 const formatted = data.map(d => ({
@@ -49,7 +49,7 @@ export default function Prediksi({ onBack }) {
 
         // Fetch indicator data
         if (selectedIndicator !== 'None') {
-            fetch(`http://localhost:5000/api/indicator?symbol=${symbol}&type=${selectedIndicator}&period=${period}`)
+            fetch(`flasknarastock-production.up.railway.app:5000/api/indicator?symbol=${symbol}&type=${selectedIndicator}&period=${period}`)
                 .then(res => res.json())
                 .then(data => {
                     const formatted = data.map(d => ({
@@ -63,7 +63,7 @@ export default function Prediksi({ onBack }) {
         }
 
         // Fetch zone annotations
-        fetch(`http://localhost:5000/api/zones?symbol=${symbol}&period=${period}`)
+        fetch(`flasknarastock-production.up.railway.app:5000/api/zones?symbol=${symbol}&period=${period}`)
             .then(res => res.json())
             .then(zones => {
                 const formattedZones = zones.map(z => ({
@@ -82,7 +82,7 @@ export default function Prediksi({ onBack }) {
             })
 
         // Fetch zone counts for bar chart
-        fetch(`http://localhost:5000/api/zones/counts?symbol=${symbol}&period=${period}`)
+        fetch(`flasknarastock-production.up.railway.app:5000/api/zones/counts?symbol=${symbol}&period=${period}`)
             .then(res => res.json())
             .then(data => setZoneCounts(data))
 
