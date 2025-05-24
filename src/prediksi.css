@@ -18,3 +18,28 @@
   color: white;
   border-color: #0056b3;
 }
+
+.dark-bg-text-white,
+.dark-bg-text-white * {
+  color: white !important;
+}
+
+/* Warna tulisan toolbar export jadi hitam */
+.apexcharts-toolbar svg,
+.apexcharts-toolbar button,
+.apexcharts-toolbar span {
+  color: rgb(255, 255, 255) !important;
+  fill: rgb(255, 255, 255) !important;
+  stroke: rgba(255, 255, 255, 0) !important;
+}
+
+/* Hover background overlay (tooltip background) */
+.apexcharts-tooltip, .exportCSV, .exportPNG, .exportSVG {
+  background: rgba(255, 255, 255, 0.9) !important; /* gelap, bisa diubah sesuai keinginan */
+  color: rgb(0, 0, 0) !important; /* text putih agar kontras */
+}
+
+/* Toolbar button hover background (optional) */
+.apexcharts-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
